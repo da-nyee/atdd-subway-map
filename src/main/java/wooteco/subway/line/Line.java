@@ -1,10 +1,7 @@
 package wooteco.subway.line;
 
 import wooteco.subway.exception.LineSuffixException;
-import wooteco.subway.section.Section;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Line {
