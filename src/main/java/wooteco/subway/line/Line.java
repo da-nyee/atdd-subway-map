@@ -13,41 +13,21 @@ public class Line {
     private Long id;
     private String name;
     private String color;
-    private String upStationId;
-    private String downStationId;
-    private List<Section> sections = new ArrayList<>(); // TODO List<Section> -> Sections 변경
 
     public Line() {
     }
 
-    public Line(Long id, String name, String color) { //TODO 삭제
+    public Line(Long id, String name, String color) {
+        validateSuffix(name);
         this.id = id;
         this.name = name;
         this.color = color;
     }
 
-    public Line(String name, String color) { //TODO 삭제
+    public Line(String name, String color) {
         validateSuffix(name);
         this.name = name;
         this.color = color;
-    }
-
-    public Line(Long id, String name, String color, String upStationId, String downStationId, List<Section> sections) {
-        this.id = id;
-        this.name = name;
-        this.color = color;
-        this.upStationId = upStationId;
-        this.downStationId = downStationId;
-        this.sections = sections;
-    }
-
-    public Line(String name, String color, String upStationId, String downStationId, List<Section> sections) {
-        validateSuffix(name);
-        this.name = name;
-        this.color = color;
-        this.upStationId = upStationId;
-        this.downStationId = downStationId;
-        this.sections = sections;
     }
 
     private void validateSuffix(String name) {
@@ -58,14 +38,6 @@ public class Line {
 
     private boolean isNotEndsWithLine(String name) {
         return !name.endsWith(SUFFIX);
-    }
-
-    public boolean isSameId(Long id) {
-        return this.id.equals(id);
-    }
-
-    public boolean isSameName(Line line) {
-        return this.name.equals(line.name);
     }
 
     public boolean isSameColor(Line line) {
