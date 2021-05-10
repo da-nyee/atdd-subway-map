@@ -7,9 +7,14 @@ public class StationResponse {
     public StationResponse() {
     }
 
-    public StationResponse(Long id, String name) {
+    public StationResponse(Long id, String name) {//TODO 삭제
         this.id = id;
         this.name = name;
+    }
+
+    public StationResponse(Station station) {
+        this.id = station.getId();
+        this.name = station.getName();
     }
 
     public Long getId() {
