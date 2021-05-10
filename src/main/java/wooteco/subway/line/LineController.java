@@ -30,8 +30,8 @@ public class LineController {
     public ResponseEntity<List<LineResponse>> showLines() {
         List<Line> lines = lineService.lines();
         List<LineResponse> lineResponses = lines.stream()
-            .map(it -> new LineResponse(it.getId(), it.getName(), it.getColor()))
-            .collect(Collectors.toList());
+                .map(it -> new LineResponse(it.getId(), it.getName(), it.getColor()))
+                .collect(Collectors.toList());
         return ResponseEntity.ok().body(lineResponses);
     }
 
